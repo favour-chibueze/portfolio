@@ -1,10 +1,16 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
+const isOpen = ref(false);
+
 const toggleColorMode = () => {
     console.log('toggleColorMode', colorMode.preference)
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
+
+const toggleMenu = () => {
+    isOpen.value = !isOpen.value;
+};
 
 useHead({
     bodyAttrs: {
@@ -13,9 +19,10 @@ useHead({
 })
 </script>
 
+
 <template>
-    <nav class="w-full transition-all">
-        <div class="container mx-auto flex justify-between items-center py-6">
+    <nav class="w-full transition-all bg-white dark:bg-[#1d1f20]">
+        <div class="container mx-auto flex justify-between items-center py-6 px-4">
             <!-- Logo -->
             <NuxtLink to="/" class="text-xl font-bold text-gray-900 dark:text-white">
                 <h1
@@ -24,23 +31,36 @@ useHead({
                 </h1>
             </NuxtLink>
 
-            <!-- Navigation Links -->
+            <!-- Desktop Navigation -->
             <ul class="hidden md:flex space-x-6">
+                <li><NuxtLink to="/" class="nav-link hover:underline">Home</NuxtLink></li>
+                <li><NuxtLink to="/about" class="nav-link hover:underline">About</NuxtLink></li>
+                <li><NuxtLink to="/experience" class="nav-link hover:underline">Experience</NuxtLink></li>
+                <li><NuxtLink to="/contact" class="nav-link hover:underline">Contact</NuxtLink></li>
                 <li>
-                    <NuxtLink to="/" class="nav-link hover:underline">Home</NuxtLink>
+                    <button @click="toggleColorMode" class="rounded-md" title="Toggle Dark Mode">
+                        <Icon
+                            :name="colorMode.preference === 'dark' ? 'mdi:moon-waning-crescent' : 'mdi:white-balance-sunny'"
+                            class="text-2xl text-gray-900 dark:text-white" />
+                    </button>
                 </li>
-                <li>
-                    <NuxtLink to="/about" class="nav-link hover:underline">About</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="/experience" class="nav-link hover:underline">Experience</NuxtLink>
-                </li>
+            </ul>
 
+            <!-- Mobile Menu Button -->
+            <button @click="toggleMenu" class="md:hidden focus:outline-none">
+                <Icon :name="isOpen ? 'mdi:close' : 'mdi:menu'" class="text-3xl text-gray-900 dark:text-white" />
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div v-show="isOpen" class="md:hidden bg-white dark:bg-[#1d1f20] transition-all">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><NuxtLink to="/" class="nav-link" @click="isOpen = false">Home</NuxtLink></li>
+                <li><NuxtLink to="/about" class="nav-link" @click="isOpen = false">About</NuxtLink></li>
+                <li><NuxtLink to="/experience" class="nav-link" @click="isOpen = false">Experience</NuxtLink></li>
+                <li><NuxtLink to="/contact" class="nav-link" @click="isOpen = false">Contact</NuxtLink></li>
                 <li>
-                    <NuxtLink to="/contact" class="nav-link hover:underline">Contact</NuxtLink>
-                </li>
-                <li>
-                    <button @click="toggleColorMode" class="rounded-md" title="icon">
+                    <button @click="toggleColorMode" class="rounded-md" title="Toggle Dark Mode">
                         <Icon
                             :name="colorMode.preference === 'dark' ? 'mdi:moon-waning-crescent' : 'mdi:white-balance-sunny'"
                             class="text-2xl text-gray-900 dark:text-white" />

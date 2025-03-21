@@ -56,14 +56,14 @@ const experience = ref([
             </h1>
 
             <div class="py-6 flex flex-col ">
-                <div class="border-b border-gray-200 my-5 pb-5 flex justify-between items-center"
+                <div class="border-b border-gray-200 my-5 pb-5 flex justify-between lg:items-center items-end"
                     v-for="exp in experience">
                     <div>
-                        <h2 class=" text-2xl font-semibold pb-2.5">{{ exp.title }}</h2>
-                        <a :href="exp.link" target="_blank" class="text-xl">{{ exp.company }}</a>
+                        <h2 class="lg:text-2xl font-semibold pb-2.5">{{ exp.title }}</h2>
+                        <a :href="exp.link" target="_blank" class="text-sm lg:text-xl">{{ exp.company }}</a>
                     </div>
                     <div>
-                        <p class="text-xl">
+                        <p class="text-[12px] lg:text-xl">
                             <span class="black:text-white" v-if="exp.status">●</span>
                             {{ exp.date }}
                         </p>
