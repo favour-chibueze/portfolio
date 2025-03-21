@@ -7,5 +7,6 @@
     <div>
         <BaseNavigation />
         <slot />
+        <BaseFooter />
     </div>
 </template>

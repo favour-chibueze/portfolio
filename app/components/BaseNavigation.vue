@@ -15,24 +15,29 @@ useHead({
 
 <template>
     <nav class="w-full transition-all">
-        <div class="container mx-auto flex justify-between items-center">
+        <div class="container mx-auto flex justify-between items-center py-6">
             <!-- Logo -->
             <NuxtLink to="/" class="text-xl font-bold text-gray-900 dark:text-white">
-                <NuxtImg src="/favour-chibueze.svg" alt="Favour Chibueze" densities="1x" format="webp"
-                    sizes="xs:10vw sm:67px" />
+                <h1
+                    class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 dark:before:bg-white before:bg-black">
+                    <span class="relative text-white dark:text-gray-950">FC</span>
+                </h1>
             </NuxtLink>
 
             <!-- Navigation Links -->
             <ul class="hidden md:flex space-x-6">
                 <li>
-                    <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+                    <NuxtLink to="/" class="nav-link hover:underline">Home</NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/projects" class="nav-link">Experience</NuxtLink>
+                    <NuxtLink to="/about" class="nav-link hover:underline">About</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/experience" class="nav-link hover:underline">Experience</NuxtLink>
                 </li>
 
                 <li>
-                    <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
+                    <NuxtLink to="/contact" class="nav-link hover:underline">Contact</NuxtLink>
                 </li>
                 <li>
                     <button @click="toggleColorMode" class="rounded-md">
