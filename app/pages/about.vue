@@ -3,7 +3,7 @@
 
 <template>
     <section class="container mx-auto py-10 font-menlo">
-                <div class="w-8/12 flex flex-col  mx-auto font-menlo">
+                <div class="lg:w-8/12 w-full flex flex-col mx-auto font-menlo">
                     <h1 class="text-xl lg:text-2xl font-bold mb-6 text-balance">
                     About Me
                     </h1>
