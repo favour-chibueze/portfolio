@@ -40,7 +40,7 @@ useHead({
                     <NuxtLink to="/contact" class="nav-link hover:underline">Contact</NuxtLink>
                 </li>
                 <li>
-                    <button @click="toggleColorMode" class="rounded-md">
+                    <button @click="toggleColorMode" class="rounded-md" title="icon">
                         <Icon
                             :name="colorMode.preference === 'dark' ? 'mdi:moon-waning-crescent' : 'mdi:white-balance-sunny'"
                             class="text-2xl text-gray-900 dark:text-white" />

@@ -1,4 +1,32 @@
 <script setup lang="ts">
+
+useSeoMeta({
+    title: "Favour Chibueze | Frontend Engineer",
+    description: "Favour Chibueze is a skilled frontend developer specializing in building modern, responsive, and accessible web applications that deliver exceptional user experiences.",
+    ogTitle: "Favour Chibueze | Frontend Engineer",
+    ogDescription: "Favour Chibueze is a skilled frontend developer specializing in building modern, responsive, and accessible web applications that deliver exceptional user experiences.",
+    ogImage: "/favour-chibueze.jpg",
+    ogUrl: `http:localhost:3000`,
+    twitterTitle: "Favour Chibueze | Frontend Engineer",
+    twitterDescription: "Favour Chibueze is a skilled frontend developer specializing in building modern, responsive, and accessible web applications that deliver exceptional user experiences.",
+    twitterImage: "/favour-chibueze.jpg",
+    twitterCard: "summary",
+    keywords: 'frontend developer, frontend engineer, web developer, portfolio, React, Vue, seo manager, accessibility developer, Vue developer, germany web developer, munich developer, software developer'
+});
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favour-chibueze.jpg'
+    }
+  ]
+})
+
 </script>
 
 <template>
@@ -19,23 +47,23 @@
                     </p>
 
                     <div class="flex gap-5 pt-10 justify-end">
-                        <a href="https://github.com/favour-chibueze">
+                        <a href="https://github.com/favour-chibueze" aria-label="GitHub">
                             <Icon name="mdi:github" class="text-3xl cursor-pointer" />
                         </a>
 
-                        <a href="mailto:chibueze.favour.o@gmail.com">
+                        <a href="mailto:chibueze.favour.o@gmail.com" aria-label="Email">
                             <Icon name="mdi:email" class="text-3xl cursor-pointer" />
                         </a>
 
-                        <a href="https://www.linkedin.com/in/favourchibueze/">
+                        <a href="https://www.linkedin.com/in/favourchibueze/" aria-label="LinkedIn">
                             <Icon name="mdi:linkedin" class="text-3xl cursor-pointer" />
                         </a>
 
-                        <a href="https://twitter.com/FavourChi__">
+                        <a href="https://twitter.com/FavourChi__" aria-label="Twitter">
                             <Icon name="mdi:twitter" class="text-3xl cursor-pointer" />
                         </a>
 
-                        <a href="https://favourchi.medium.com/">
+                        <a href="https://favourchi.medium.com/" aria-label="Medium">
                             <Icon name="mdi:medium" class="text-3xl cursor-pointer" />
                         </a>
                     </div>
