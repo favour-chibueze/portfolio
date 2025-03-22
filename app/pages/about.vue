@@ -73,7 +73,7 @@
                     I create clear and engaging content to simplify complex topics, including documentation, blog posts,
                     and tutorials. <a
                         href="https://www.notion.so/favour-chibueze/FAVOUR-CHIBUEZE-WRITING-PORTFOLIO-14d23431327080f9ab4dfa245cb0a126"
-                        target="_blank" class="text-white font-bold">Check out my writing portfolio here</a>.
+                        target="_blank" class="dark:text-white font-bold">Check out my writing portfolio here</a>.
                 </li>
 
                 <li class="mb-2">
